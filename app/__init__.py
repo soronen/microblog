@@ -7,11 +7,13 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 from flask_mail import Mail
+from flask_bootstrap import Bootstrap
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
 mail = Mail(app)
+bootstrap = Bootstrap(app)
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
